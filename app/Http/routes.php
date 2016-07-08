@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('users', 'UserCtrl', ['only'=>['index', 'show']]);
+Route::resource('tickets', 'TicketCtrl', ['only'=>['index', 'show']]);
+
+Route::resource('users.tickets', 'UserTicketCtrl');

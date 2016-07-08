@@ -21,11 +21,11 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token', 'created_at', 'updated_at'
     ];
 
     public function tickets()
     {
-        $this->hasMany('App\Ticket');
+        $this->hasMany('App\Ticket', 'user_id');
     }
 }
